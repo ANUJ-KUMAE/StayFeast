@@ -32,7 +32,7 @@ export function Login() {
   return (
     <AuthCard>
       <h2 className="font-['Playfair_Display'] text-2xl text-[#0F172A] mb-6 text-center">
-        Welcome
+        Welcome Back
       </h2>
 
       {error && (
