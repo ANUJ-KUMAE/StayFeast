@@ -2,15 +2,21 @@ import { LogOut } from "lucide-react";
 import { useAuth } from "../Context/AuthContext";
 import { useState } from "react";
 import { Modal } from "./Modal";
+import { useNavigate } from "react-router-dom";
 
 export function Navbar() {
   const { user, logout } = useAuth();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
     setShowLogoutModal(false);
   };
+
+  const finalLogOut = () => {
+      navigate('/')
+  }
 
   return (
     <>
@@ -55,7 +61,7 @@ export function Navbar() {
             Cancel
           </button>
           <button
-            onClick={handleLogout}
+            onClick={finalLogOut}
             className="px-4 py-2 bg-[#F59E0B] hover:bg-[#D97706] text-white rounded-xl transition-all font-['Poppins']"
           >
             Logout
